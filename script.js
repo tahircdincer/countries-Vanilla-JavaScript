@@ -1,5 +1,11 @@
 "use strict";
 
+// Variables
+
+const container = document.querySelector(".container");
+
+// Data
+
 const countries = [
   "Afghanistan",
   "Albania",
@@ -82,7 +88,6 @@ const countries = [
   "Iran",
   "Iraq",
   "Ireland",
-  "Israel",
   "Italy",
   "Jamaica",
   "Japan",
@@ -1199,15 +1204,7 @@ const countries_data = [
     region: "Europe",
     area: 572,
   },
-  {
-    name: "Israel",
-    capital: "Jerusalem",
-    languages: ["Hebrew (modern)", "Arabic"],
-    population: 9216900,
-    flag: "https://flagcdn.com/il.svg",
-    region: "Asia",
-    area: 20770,
-  },
+
   {
     name: "Italy",
     capital: "Rome",
@@ -2454,3 +2451,19 @@ const countries_data = [
     area: 390757,
   },
 ];
+
+document.querySelector("p").textContent = ` ${countries.length}, countries `;
+let country;
+const flag = document.createElement("img");
+for (let i = 0; i < countries.length; i++) {
+  country = document.createElement("div");
+  country.textContent = `${countries[i]}`;
+  const countryStyle = country.style;
+  countryStyle.padding = "2rem";
+  countryStyle.fontWeight = "bold";
+  countryStyle.boxShadow = "3px 3px 3px grey";
+  countryStyle.textAlign = "center";
+  countryStyle.maxHeight = "2rem";
+
+  container.appendChild(country);
+}
